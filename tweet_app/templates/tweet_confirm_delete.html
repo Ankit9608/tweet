@@ -1,0 +1,15 @@
+
+{% extends "layout.html" %}
+{% block title %}
+ Chai and Tweet
+{% endblock %}
+{% block content %}
+ <h2 class="text-center mt-5">Are you sure? Do you want to delete the tweet ?</h2>
+ <form method="POST">
+    {%csrf_token%}
+    <div class="d-flex justify-content-center mt-5 pa">
+        <button class="btn btn-secondary">Confirm</button>
+        <button class="btn btn-primary">Cancel</button>
+    </div>    
+ </form>
+{% endblock %}

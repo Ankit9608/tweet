@@ -1,0 +1,15 @@
+
+{% extends "layout.html" %}
+{% block title %}
+ Chai and Tweet
+{% endblock %}
+{% block content %}
+ <h2 class="text-center mt-4">Welcome to Chais Django Project</h2>
+ <h2>{%if form.instance.pk %}Edit Tweet{% else %} Create Tweet{%endif%}
+</h2>
+<form method="post" enctype="multipart/form-data">{{form.as_p}}
+    {% csrf_token %}
+    <button class="btn btn-danger" type="submit">Submit</button>
+</form>
+<a href="{% url 'tweet_list'%}">Back to tweets</a>
+{% endblock %}
